@@ -1,0 +1,23 @@
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.0">
+    <persistence-unit name="doctorDatabase" transaction-type="RESOURCE_LOCAL">
+<!--        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>-->
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+<!--        <provider>org.hibernate.ejb.HibernatePersistence</provider>-->
+        <class>com.academicerp.backend.Bean.Tag</class>
+        <class>com.academicerp.backend.Bean.Post</class>
+        <class>com.academicerp.backend.Bean.PostTag</class>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <properties>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jpa_manytomany_2?useSSL=false&amp;allowPublicKeyRetrieval=true"/>
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.user" value="root"/>
+            <property name="jakarta.persistence.jdbc.password" value="MeteAtbas!1"/>
+
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="false"/>
+<!--            <property name="hibernate.hbm2ddl.auto" value="drop-and-create"/>-->
+<!--            <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>-->
+        </properties>
+    </persistence-unit>
+</persistence>
